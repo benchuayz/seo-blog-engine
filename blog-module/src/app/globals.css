@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+/* Dark, premium default. The article styling assumes a dark background.
+   To go light, flip these two values and adjust the text/white-opacity
+   classes in BlogArticle.tsx. */
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
