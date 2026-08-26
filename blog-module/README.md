@@ -38,7 +38,7 @@ If your project doesn't use the `@/*` path alias, either add it to your
 `tsconfig.json` (`"paths": { "@/*": ["./src/*"] }`) or change the imports to
 relative paths.
 
-Requirements: Next.js App Router, React 19, Tailwind CSS v4. The styling assumes
+Requirements: Node 20.9+, Next.js App Router, React 19, Tailwind CSS v4. The styling assumes
 a dark background (see `globals.css`); to go light, flip the two CSS variables
 and adjust the `text-white/*` opacities in `BlogArticle.tsx`.
 

@@ -76,7 +76,7 @@ seo-blog-engine/
 ## Requirements
 
 - [Claude Code](https://claude.com/claude-code)
-- For the Next.js module: Node 18+, and it uses Next.js (App Router), React 19,
+- For the Next.js module: Node 20.9+, and it uses Next.js (App Router), React 19,
   Tailwind CSS v4.
 
 ## Secrets
