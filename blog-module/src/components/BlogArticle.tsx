@@ -193,7 +193,6 @@ function BlockView({
     case "video":
       return (
         <figure className="my-10">
-          {/* eslint-disable-next-line */}
           <video controls playsInline preload="metadata" className="mx-auto w-full max-w-[360px] rounded-2xl border border-white/10 bg-black" src={block.src} />
           {block.caption || block.originalUrl ? (
             <figcaption className="mt-3 text-center text-sm text-white/40">

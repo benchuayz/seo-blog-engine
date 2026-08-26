@@ -38,7 +38,7 @@ by default so the module stays dependency-free.
 
 The `emailCapture` block POSTs `{ email, resource, source }` to
 `/api/lead` (`blog-module/src/app/api/lead/route.ts`). With no webhook set it
-logs and returns success, so the form never looks broken. To actually capture
+returns success without storing the submitted address, so the form never looks broken. To actually capture
 leads, set `LEAD_CAPTURE_WEBHOOK_URL` to any endpoint that accepts JSON:
 
 - A **Google Apps Script** web app that appends a row to a Sheet (free, 10-minute
@@ -47,6 +47,10 @@ leads, set `LEAD_CAPTURE_WEBHOOK_URL` to any endpoint that accepts JSON:
 - Your own API.
 
 Optionally set `LEAD_SLACK_WEBHOOK_URL` to ping a channel on each new lead.
+
+Before a public launch, add a distributed rate limit for `/api/lead` through your
+hosting firewall or a shared datastore. The included route rejects oversized and
+malformed input, but a serverless in-memory counter would not reliably stop spam.
 
 `resource` tags which offer they opted into; `source` is the post URL they came
 from, so your sheet shows exactly which post generated which lead.
