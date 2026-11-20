@@ -11,7 +11,7 @@ poster, or a LinkedIn thought-leader with nothing to say, rewrite it. Real writi
 has a point. Every sentence earns its place. If you can delete a sentence and lose
 nothing, delete it.
 
-## Dead-giveaway words — never use
+## Dead-giveaway words: never use
 
 landscape, leverage, navigate, delve, unpack, robust, comprehensive, holistic,
 realm, foster, tapestry, elevate, resonate, empower, seamless, harness, curate,
@@ -32,7 +32,7 @@ revolutionary, disrupt, skyrocket.
 | "Holistic approach" | Say the actual approach |
 | "Actionable next steps" | Just list the steps |
 
-## Dead-giveaway formatting — never do
+## Dead-giveaway formatting: never do
 
 1. **Transition-word openers.** Never start a sentence or bullet with Moreover,
    Furthermore, Additionally, That said, Importantly, Notably, Crucially, In
@@ -47,7 +47,7 @@ revolutionary, disrupt, skyrocket.
 4. **Says-everything-means-nothing paragraphs.** If you can't state the point of a
    paragraph in one plain sentence, delete the paragraph.
 
-## Dead-giveaway sentence structures — never use
+## Dead-giveaway sentence structures: never use
 
 - **Forced negation / the reframe:** "It's not X, it's Y." "Instead of X, Y." AI
   loves this. Humans just state the thing.

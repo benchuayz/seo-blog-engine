@@ -1,0 +1,47 @@
+# Weekly SEO autopilot: 5 new posts a week, opened as a pull request.
+# Copy to .github/workflows/weekly-posts.yml in YOUR SITE's repo. See docs/WEEKLY-AUTOPILOT.md.
+# Secrets: ANTHROPIC_API_KEY (required), GSC_SA_JSON (service-account JSON contents, optional),
+# INDEXNOW_KEY (optional). blog-engine.config.md must be committed or provided for this to work,
+# so keep that repo private if your config holds anything you don't want public.
+name: Weekly SEO posts
+
+on:
+  schedule:
+    - cron: "0 1 * * 1" # Mondays 01:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+jobs:
+  weekly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+        working-directory: blog-module # change to your site's folder ("." if the site is the repo root)
+      - name: Write GSC key
+        env:
+          GSC_JSON: ${{ secrets.GSC_SA_JSON }}
+        if: env.GSC_JSON != ''
+        run: printf '%s' "$GSC_JSON" > "$RUNNER_TEMP/gsc-sa.json" && chmod 600 "$RUNNER_TEMP/gsc-sa.json"
+      - uses: anthropics/claude-code-action@v1
+        env:
+          SITE_URL: https://www.example.com # your canonical origin
+          GSC_SITE: sc-domain:example.com
+          GSC_SA_JSON: ${{ runner.temp }}/gsc-sa.json
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Follow skill/seo-blog-engine/SKILL.md, command `weekly`, with publish_mode=pr.
+            Open one pull request with this week's posts and put the run report in its description.
+          claude_args: |
+            --max-turns 200
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(npm run build),Bash(git:*),Bash(gh pr:*),Bash(node scripts/seo.mjs:*)"

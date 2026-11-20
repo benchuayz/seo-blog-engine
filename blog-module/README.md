@@ -49,10 +49,10 @@ See `../docs/BLOG-FORMULA.md` for the full block reference and
 
 ## Where the SEO/GEO lives
 
-- `src/lib/schema.ts` — per-post `@graph`: BlogPosting + BreadcrumbList + FAQPage (+ VideoObject)
-- `src/app/blog/[slug]/page.tsx` — canonical URL, OG/Twitter metadata
-- `src/components/FAQ.tsx` — visible FAQ that mirrors the FAQ schema word-for-word (the GEO trick)
-- `src/app/sitemap.ts` / `src/app/robots.ts` — dynamic sitemap + AI-crawler allow-list
+- `src/lib/schema.ts`, per-post `@graph`: BlogPosting + BreadcrumbList + FAQPage (+ VideoObject)
+- `src/app/blog/[slug]/page.tsx`, canonical URL, OG/Twitter metadata
+- `src/components/FAQ.tsx`, visible FAQ that mirrors the FAQ schema word-for-word (the GEO trick)
+- `src/app/sitemap.ts` / `src/app/robots.ts`, dynamic sitemap + AI-crawler allow-list
 
 ---
 

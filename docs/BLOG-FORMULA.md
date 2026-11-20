@@ -4,13 +4,13 @@
 
 ```
 1.  Lead          one or two lines naming the real problem
-2.  Context       why it matters, who it's for — front-load proof here
+2.  Context       why it matters, who it's for, front-load proof here
 3.  Callout       the one-line thesis, set apart
 4.  Sections      3-6 numbered sections. One point each. Each answers an objection.
                   Headings read like things a person would actually say.
 5.  Resource      (optional) a lead-magnet card mid-post
 6.  Mid CTA       bridges to your offer page, UTM-tagged
-7.  Proof         a specific result/story/example — real numbers only
+7.  Proof         a specific result/story/example, real numbers only
 8.  Takeaways     "the short version" recap box
 9.  FAQs          4-6 real buyer questions (visible + FAQPage schema)
 10. CTA           the single next step
@@ -18,6 +18,25 @@
 
 A working, annotated version of this is
 `blog-module/src/content/blog/example-founder-post.ts`. Read it alongside this doc.
+
+## What makes a post worth ranking
+
+Google and the AI assistants are both trying to find the single best answer to a question.
+A post earns that spot by being more useful than what's there now. What we put in every post:
+
+- **The answer in the first paragraph.** No warm-up. The reader (and the AI) gets it straight away.
+- **Something only you could write.** A real example from your work, a number from your
+  results, a mistake you made, an opinion you'll defend. This is what generic AI posts can't
+  copy, and it's the reason to build from transcripts of your own calls and videos.
+- **The how, not just the what.** Steps, templates, scripts, price ranges, checklists the reader
+  can use today. A `scriptCard` or a takeaways box people screenshot.
+- **A visual that explains.** At least one infographic or diagram drawn from the post's own
+  content, plus embeds of any video or post it mentions (`docs/VISUALS-AND-EMBEDS.md`).
+- **The objections answered.** Each section handles one "yeah, but...". The FAQs catch the rest,
+  in the buyer's own words.
+- **A next step.** One CTA to the offer, and links to the 2 or 3 posts that go deeper.
+
+If a post could have been written by someone who's never done the work, it isn't done.
 
 ## Length
 
@@ -81,7 +100,7 @@ Every post is a `BlogPost` object (see `blog-module/src/lib/blog.ts`) with a
 
 ### Conversion + linking
 ```ts
-// Inline email capture — posts to /api/lead. `resource` tags the offer.
+// Inline email capture, posts to /api/lead. `resource` tags the offer.
 { type: "emailCapture", heading: "Want the checklist?", body: "…",
   buttonLabel: "Email it to me", resource: "Founder Checklist", accent: "brand" }
 
@@ -117,7 +136,7 @@ dek           // standfirst under the H1
 datePublished // ISO date
 category      // groups posts on the index
 bridgeSlug    // offer page this post funnels to (optional; falls back to default)
-faqs          // 4-6 real buyer Q&A — visible AND FAQPage schema
+faqs          // 4-6 real buyer Q&A, visible AND FAQPage schema
 blocks        // the body
 ```
 

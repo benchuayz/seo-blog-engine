@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import JsonLd from "@/components/JsonLd";
 import { organizationSchema, personSchema } from "@/lib/schema";
@@ -22,6 +23,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd data={personSchema} />
         <JsonLd data={organizationSchema} />
         {children}
+        {/* Fathom Analytics. Set NEXT_PUBLIC_FATHOM_SITE_ID to switch it on (see docs/FATHOM.md). */}
+        {process.env.NEXT_PUBLIC_FATHOM_SITE_ID ? (
+          <Script
+            src="https://cdn.usefathom.com/script.js"
+            data-site={process.env.NEXT_PUBLIC_FATHOM_SITE_ID}
+            strategy="afterInteractive"
+          />
+        ) : null}
         {siteConfig.showEngineCredit ? (
           <footer className="border-t border-white/10 py-8 text-center text-xs text-white/30">
             Blog engine by{" "}

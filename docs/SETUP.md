@@ -1,9 +1,13 @@
 # Setup
 
+**Fastest route:** open this repo in Claude Code or Codex and say "build my SEO site
+with this repo." The agent reads `AGENTS.md` and runs every step below for you,
+asking for what it needs. The rest of this page is the manual version.
+
 Two things ship in this repo, and you can use either or both:
 
-1. **The skill** (`skill/seo-blog-engine/`) — the brain that writes posts.
-2. **The blog module** (`blog-module/`) — a working Next.js blog the skill can
+1. **The skill** (`skill/seo-blog-engine/`), the brain that writes posts.
+2. **The blog module** (`blog-module/`), a working Next.js blog the skill can
    write straight into.
 
 You need [Claude Code](https://claude.com/claude-code) installed.
@@ -63,7 +67,7 @@ The quality of every post depends on what you feed the engine. Have these ready:
   it points to.
 - **Raw material to write from**: a keyword list, a Google Search Console export,
   or transcripts of podcasts / sales calls / videos. (Got footage? Transcribe it
-  first — the skill reads text, not video.)
+  first, the skill reads text, not video.)
 
 ---
 
@@ -77,7 +81,7 @@ mode"), then run:
 ```
 
 Answer the intake. Nothing is written until you approve. It saves your answers to
-`blog-engine.config.md` (gitignored — it stays private).
+`blog-engine.config.md` (gitignored, it stays private).
 
 ---
 
