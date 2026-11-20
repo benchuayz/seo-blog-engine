@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/site.config";
+import { BLOG_POSTS } from "@/content/blog";
 
 /** A bare home page so the demo runs. Replace with your real homepage, or
- *  redirect "/" to "/blog" if this engine is your whole site. */
+ *  redirect "/" to "/blog" if this engine is your whole site.
+ *  Whatever you build, keep a "latest posts" list on the homepage: it passes the
+ *  homepage's authority to new posts so Google finds them (docs/SITE-STRUCTURE.md). */
 export default function Home() {
   return (
     <main className="mx-auto flex min-h-screen max-w-2xl flex-col justify-center px-6">
@@ -17,6 +20,15 @@ export default function Home() {
       >
         Read the blog
       </Link>
+      <ul className="mt-12 space-y-3 text-white/70">
+        {BLOG_POSTS.slice(0, 6).map((p) => (
+          <li key={p.slug}>
+            <Link href={`/blog/${p.slug}`} className="hover:text-white">
+              {p.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </main>
   );
 }

@@ -63,6 +63,8 @@ job of this engine is to make publishing the 40th post as cheap as the first.
 
 - It doesn't invent proof. It only uses numbers from your config's proof bank.
 - It doesn't watch video. Give it a transcript.
-- It doesn't auto-publish. You approve the outline, you review the draft, you push.
+- It doesn't publish without your say-so. `cook` waits for your outline sign-off.
+  The weekly autopilot only runs if you switch it on, and opens pull requests for
+  you to approve until you choose direct publishing (`docs/WEEKLY-AUTOPILOT.md`).
 - It doesn't guarantee rankings. It removes the reasons posts usually fail
   (wrong audience, no answer, no schema, AI-slop voice) and lets the work compound.

@@ -26,13 +26,12 @@ Convention used throughout:
 
 ## Analytics (pick one)
 
-- **Fathom Analytics** (privacy-friendly, no cookie banner). Set
-  `NEXT_PUBLIC_FATHOM_SITE_ID`. The site ID is public; keep the API key
-  (`FATHOM_API_KEY`) server-side if you pull reports programmatically.
-- **Google Analytics 4.** Set `NEXT_PUBLIC_GA4_MEASUREMENT_ID`.
-
-Add the tracking snippet in `blog-module/src/app/layout.tsx`. Neither is included
-by default so the module stays dependency-free.
+- **Fathom Analytics** (what we use; privacy-friendly, no cookie banner). Already
+  wired into the blog module: set `NEXT_PUBLIC_FATHOM_SITE_ID` and redeploy. Full
+  install, verification and event tracking: [`docs/FATHOM.md`](FATHOM.md). Sign up
+  through [usefathom.com/ref/WQFIKH](https://usefathom.com/ref/WQFIKH) for $10 off.
+- **Google Analytics 4.** Add the gtag snippet to `blog-module/src/app/layout.tsx`
+  and set `NEXT_PUBLIC_GA4_MEASUREMENT_ID`.
 
 ## Email capture → your CRM/sheet
 
@@ -68,7 +67,7 @@ function doPost(e) {
 ```
 
 Deploy it as a web app ("anyone can access"), paste the `/exec` URL into
-`LEAD_CAPTURE_WEBHOOK_URL`. Never commit that URL — it lives in `.env.local`.
+`LEAD_CAPTURE_WEBHOOK_URL`. Never commit that URL, it lives in `.env.local`.
 
 ## A simple weekly review
 

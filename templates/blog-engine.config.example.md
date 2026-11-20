@@ -1,14 +1,14 @@
 # blog-engine.config.md
 
 > This is the file the skill's `setup` step writes (a filled example is in
-> `examples/intake-walkthrough.md`). It's the brain of your blog engine — every
+> `examples/intake-walkthrough.md`). It's the brain of your blog engine, every
 > post the skill cooks reads from here. Keep it private (it's gitignored by
 > default). Edit it anytime your offer, proof, or voice changes.
 
 ## Site
 - **Brand:** Northwind Analytics
 - **Domain:** https://www.northwindanalytics.com
-- **Stack:** Next.js (App Router) — using the `blog-module` from seo-blog-engine
+- **Stack:** Next.js (App Router), using the `blog-module` from seo-blog-engine
 - **Booking link:** https://cal.com/northwind/intro
 - **Offer / bridge page:** /platform
 
@@ -30,7 +30,7 @@
 ## Proof bank (only use numbers from this list)
 - Cut one customer's dashboard load time from 40s to under 2s. (public, named OK)
 - Consolidated 6 conflicting revenue definitions into 1 for a 600-person SaaS.
-  (anonymized — do not name the client)
+  (anonymized, do not name the client)
 - 4.8/5 across 30+ implementation reviews. (public)
 - Founder spent 9 years building data infra at two scale-ups. (public, E-E-A-T)
 
@@ -48,6 +48,18 @@
 - /platform (the offer page / bridge)
 - /blog/why-your-dashboards-are-slow
 - /customers (case studies)
+
+## Profiles (embedded in posts + author sameAs schema)
+- YouTube: https://www.youtube.com/@northwind
+- LinkedIn: https://www.linkedin.com/in/northwind-founder/
+- Instagram: (none)
+- Podcast: https://podcasts.apple.com/podcast/northwind-data-hour
+
+## Autopilot
+- weekly: on
+- posts_per_week: 5
+- publish_mode: pr        # pr = open a pull request to approve; direct = publish to the live site
+- report_to: the pull request description
 
 ## Categories
 - "Data Strategy"
